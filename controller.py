@@ -49,7 +49,7 @@ class AuthController:
         return db_user #login exitoso
 
     @staticmethod
-    def register(nickname, password, edad):
+    def register(nickname, password, birthday):
         conn = sqlite3.connect('users.db')
         cursor = conn.cursor()
 
@@ -58,11 +58,11 @@ class AuthController:
         try:
             with sqlite3.connect('users.db') as conn:
                 cursor = conn.cursor()
-            cursor.execute(
-                "INSERT INTO users (nickname, password, edad, bloqueado) VALUES (?, ?, ?, ?)",
-                (nickname, password_hash, edad, 0)
-            )
-            conn.commit()
+                cursor.execute(
+                    "INSERT INTO users (nickname, password, birthday, bloqueado) VALUES (?, ?, ?, ?)",
+                    (nickname, password_hash, birthday, 0)
+                )
+                conn.commit()
         except sqlite3.IntegrityError:
             raise UsuarioDuplicado("el nickname ya existe")
 
