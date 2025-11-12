@@ -93,3 +93,25 @@ insert_user_test.py → insertar usuarios manualmente.
 inspect_db.py → inspeccionar base de datos.
 
 users_dict.py → migración de usuarios antiguos.
+
+
+
+##DEBUUGS RECIENTES
+
+12-11-2025
+
+1. Antes no se podía registrar un nuevo usuario. 
+Se reemplaza en controller.py: AuthController.register
+Edad --> Birthday
+2. Se hacen comentarios en el main --> qué hace el módulo Tkinter
+3. Dentro de register:
+
+cursor.execute(
+                    "INSERT INTO users (nickname, password, birthday, bloqueado) VALUES (?, ?, ?, ?)",
+                    (nickname, password_hash, birthday, 0)
+                )
+                conn.commit()
+ estaba fuera del bucle while.
+Se mete dentro del bucle.
+Ahora soporta múltiples excepciones al crear usuario y no rompe la base de datos.
+
