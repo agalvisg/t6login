@@ -6,7 +6,7 @@ Incluye login, registro, manejo de menores de edad y usuarios bloqueados.
 
 ---
 
-## 📂 Estructura del proyecto
+##  Estructura del proyecto
 
 t6login/
 .venv/
@@ -26,11 +26,11 @@ users_dict.py
 README.md
 
 yaml
-Copiar código
+
 
 ---
 
-## 🔄 Flujo de la aplicación
+##  Flujo de la aplicación
 
 ```text
          +------------------+
@@ -59,16 +59,16 @@ Autologin                        v
                                   | Nombre en rojo   |
                                   +------------------+
 🛠 Requisitos
-Python 3.x
+Python 3.13
 
 Tkinter (incluido)
 
 Pillow: pip install pillow
 
-🚀 Cómo ejecutar
+ Cómo ejecutar:
 bash
 Copiar código
-git clone https://github.com/alejandrogalvis/t6login.git
+git clone https://github.com/agalvisg/t6login.git
 cd t6login
 python main.py
 🔐 Base de datos
@@ -87,7 +87,7 @@ Edad calculada dinámicamente desde birthday.
 
 Usuarios bloqueados pueden loguearse pero no acceder al contenido.
 
-🧪 Scripts auxiliares
+ Scripts auxiliares
 insert_user_test.py → insertar usuarios manualmente.
 
 inspect_db.py → inspeccionar base de datos.
