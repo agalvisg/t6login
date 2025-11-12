@@ -7,9 +7,9 @@ def main():
     create_db()
 
     # Iniciar ventana principal de login
-    root = Tk()
-    app = LoginView(root)
-    root.mainloop()
+    root = Tk() #Llama al módulo principal de tkinter
+    app = LoginView(root) #Inicia la interfaz
+    root.mainloop() #Bucle Constante que mantienen la interfaz abierta escuchando eventos
 
 if __name__ == "__main__":
     main()
